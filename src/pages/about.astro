@@ -10,6 +10,11 @@ const identity = {
 }
 
 const skills = ["HTML", "CSS", "JavaScript", "React", "Astro", "Writing Docs"]
+
+const skillColor = 'navy';
+const fontWeight = '500';
+const fontSize = '2rem';
+const textCase = 'uppercase';
 ---
 
 <Layout
@@ -18,6 +23,15 @@ const skills = ["HTML", "CSS", "JavaScript", "React", "Astro", "Writing Docs"]
 	pubDate={new Date('August 08 2021')}
 	heroImage="/blog-placeholder-about.jpg"
 >
+<style define:vars={{ skillColor, fontWeight, fontSize, textCase }}>
+.skill {
+	/* color: green; */
+	color: var(--skillColor);
+	font-weight: var(--fontWeight);
+	font-size: var(--fontSize);
+	text-transform: var(--textCase);
+}
+</style>
 	<a href="/">首页</a>
 	<p>以下是关于我的几个事实:</p>
 	<ul>
@@ -30,7 +44,7 @@ const skills = ["HTML", "CSS", "JavaScript", "React", "Astro", "Writing Docs"]
 	<p>我的技能是：</p>
 	<ul>
 	{
-		skills.map(m => <li>{m}</li>)
+		skills.map(m => <li class="skill">{m}</li>)
 	}
 	</ul>
 	<p>
