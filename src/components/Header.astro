@@ -1,16 +1,14 @@
 ---
-import HeaderLink from './HeaderLink.astro';
 import { SITE_TITLE } from '../consts';
+import Hamburger from './Hamburger.astro';
+import Navigation from './Navigation.astro';
 ---
 
 <header>
 	<nav>
 		<h2><a href="/">{SITE_TITLE}</a></h2>
-		<div class="internal-links">
-			<HeaderLink href="/">Home</HeaderLink>
-			<HeaderLink href="/blog">Blog</HeaderLink>
-			<HeaderLink href="/about">About</HeaderLink>
-		</div>
+		<Hamburger />
+		<Navigation />
 		<div class="social-links">
 			<a href="https://m.webtoo.ls/@astro" target="_blank">
 				<span class="sr-only">Follow Astro on Mastodon</span>
@@ -41,6 +39,9 @@ import { SITE_TITLE } from '../consts';
 			</a>
 		</div>
 	</nav>
+	<script>
+		import '../scripts/menu.js';
+	</script>
 </header>
 <style>
 	header {
