@@ -1,9 +1,11 @@
 ---
 import Layout from '../layouts/PageLayout.astro';
+import Greeting from '../components/Greeting.jsx';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 ---
 
 <Layout title={SITE_TITLE} description={SITE_DESCRIPTION}>
+	<Greeting client:load />
 	<h1>🧑‍🚀 Hello, 我的Astronaut!</h1>
 	<a href="/about">关于</a>
 	<p>
